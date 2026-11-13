@@ -65,28 +65,31 @@
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;This function handles the key press
 ;worldstate,key->worldstate
-(define (keyPress WS key)
-  (make-WS
-     (getNewRoom WS key)
-     (WS-PE WS)
-     (WS-ME WS)
-     (WS-WP WS)
-     (WS-charX WS)
-     (WS-charY WS)
-     (WS-hour WS)
-     (WS-day WS)
-     (WS-roomData WS)
-     (getNewMoveList WS)
-   )
+(define (keyHandler WS key)
+  (if (< length (WS-moveList WS) 2)
+      (make-WS
+       (WS-room WS)
+       (WS-PE WS)
+       (WS-ME WS)
+       (WS-WP WS)
+       (WS-charX WS)
+       (WS-charY WS)
+       (WS-hour WS)
+       (WS-day WS)
+       (WS-roomData WS)
+       (getNewMoveList WS key)
+      )
+      WS
+  )
 )
 
 ;
 ;worldstate,key->string
-(define (getNewRoom WS key) ())
+(define (getNewRoom WS key) (0))
 
 ;
 ;worldstate,key->list
-(define (getNewXPosition WS key) ())
+(define (getNewMoveList WS key) (0))
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;This chunk is for rendering
