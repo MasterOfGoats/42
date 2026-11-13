@@ -71,12 +71,12 @@
      (WS-PE WS)
      (WS-ME WS)
      (WS-WP WS)
-     (getNewXPosition WS key)
-     (getNewYPosition WS key)
+     (WS-charX WS)
+     (WS-charY WS)
      (WS-hour WS)
      (WS-day WS)
      (WS-roomData WS)
-     (WS-moveList WS)
+     (getNewMoveList WS)
    )
 )
 
@@ -85,13 +85,8 @@
 (define (getNewRoom WS key) ())
 
 ;
-;worldstate,key->
+;worldstate,key->list
 (define (getNewXPosition WS key) ())
-
-;
-;worldstate,key->
-(define (getNewYPosition WS key) ())
-
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;This chunk is for rendering
