@@ -66,9 +66,31 @@
 ;This function handles the key press
 ;worldstate,key->worldstate
 (define (keyPress WS key)
-  (room PE ME WP charX charY hour day roomData moveList)
-  (make-WS (WS-room) (WS-PE) (WS-ME) (WS-WP) (WS-charX) (WS-charY) (WS-hour) (WS-day) (WS-roomData) (WS-moveList) (WS-))
+  (make-WS
+     (getNewRoom WS key)
+     (WS-PE WS)
+     (WS-ME WS)
+     (WS-WP WS)
+     (getNewXPosition WS key)
+     (getNewYPosition WS key)
+     (WS-hour WS)
+     (WS-day WS)
+     (WS-roomData WS)
+     (WS-moveList WS)
+   )
 )
+
+;
+;worldstate,key->string
+(define (getNewRoom WS key) ())
+
+;
+;worldstate,key->
+(define (getNewXPosition WS key) ())
+
+;
+;worldstate,key->
+(define (getNewYPosition WS key) ())
 
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
