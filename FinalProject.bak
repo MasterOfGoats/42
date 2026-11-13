@@ -1,0 +1,13 @@
+#lang racket
+;Room is a string detailing the room
+;PE is a number representing physical energy
+;ME is a number representing mental energy
+;WP is a number representing willpower
+;CharX is a number representing character X position
+;CharY is a number representing character Y position
+;Hour is a number representing the hour
+;Day is a number representign the day
+(define ROOM-WIDTH 100)
+(define ROOM-HEIGHT 100)
+(define-struct WS (room PE ME WP charX charY hour day))
+(define initial-WS (make-WS "Dorm" 100 100 100 (/ ROOM-WIDTH 2) (/ ROOM-WEIGHT 2) 7 1))
